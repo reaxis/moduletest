@@ -1,7 +1,5 @@
-import { GameFramework } from "./GameFramework";
-
 export abstract class Game {
-	constructor() {
+	constructor(protected finish : () => void) {
 		console.log("Game constructor");
 
 		this.firstStep();
@@ -20,6 +18,6 @@ export abstract class Game {
 	protected endSecondStep() : void {
 		console.log("Game endSecondStep");
 
-		GameFramework.endGame();
+		this.finish();
 	}
 }

@@ -4,9 +4,9 @@ import { Game } from "./Game";
 import { GameA } from "./games/GameA";
 import { GameB } from "./games/GameB";
 
-export module GameFramework {
+module GameFramework {
 	interface GameFactory {
-		new() : Game;
+		new(finish : () => void) : Game;
 	}
 
 	let games : GameFactory[];
@@ -21,10 +21,10 @@ export module GameFramework {
 			GameB
 		];
 
-		currentGame = new games[0]();
+		currentGame = new games[0](endGame);
 	}
 
-	export function endGame() : void {
+	function endGame() : void {
 		console.log("GameFramework endGame");
 	}
 }
