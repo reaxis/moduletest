@@ -1,13 +1,13 @@
-export class GameA extends GameFramework.Game {
+export class GameA { // extends GameFramework.Game {
 	firstStep() {
 		console.log("GameA firstStep");
 
-		this.endFirstStep();
+		// this.endFirstStep();
 	}
 
 	secondStep() {
 		console.log("GameA secondStep");
 
-		this.endSecondStep();
+		// this.endSecondStep();
 	}
 }

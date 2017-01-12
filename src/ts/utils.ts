@@ -1,3 +1,3 @@
-function randomUtil() : number {
+export function randomUtil() : number {
 	return Math.random();
 }
