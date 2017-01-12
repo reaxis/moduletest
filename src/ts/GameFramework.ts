@@ -1,32 +1,12 @@
 import * as Utils from "./utils";
+import { Game } from "./Game";
 
-module GameFramework {
+import { GameA } from "./games/GameA";
+import { GameB } from "./games/GameB";
+
+export module GameFramework {
 	interface GameFactory {
 		new() : Game;
-	}
-
-	export abstract class Game {
-		constructor() {
-			console.log("Game constructor");
-
-			this.firstStep();
-		}
-
-		protected abstract firstStep() : void;
-
-		protected endFirstStep() : void {
-			console.log("Game endFirstStep");
-
-			this.secondStep();
-		}
-
-		protected abstract secondStep() : void;
-
-		protected endSecondStep() : void {
-			console.log("Game endSecondStep");
-
-			GameFramework.endGame();
-		}
 	}
 
 	let games : GameFactory[];
@@ -36,15 +16,17 @@ module GameFramework {
 	export function init() {
 		console.log("GameFramework init " + Utils.randomUtil());
 
-		// games = [
-		// 	GameA,
-		// 	GameB
-		// ];
+		games = [
+			GameA,
+			GameB
+		];
 
-		// currentGame = new games[0]();
+		currentGame = new games[0]();
 	}
 
 	export function endGame() : void {
 		console.log("GameFramework endGame");
 	}
 }
+
+(<any>window).init = GameFramework.init;
