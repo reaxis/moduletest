@@ -1,0 +1,13 @@
+{
+	"compilerOptions": {
+		"target": "es2015",
+		"module": "es2015",
+		"outDir": "build/js",
+		"moduleResolution": "node",
+		"rootDir": "src/ts"
+	},
+	"exclude": [
+		"node_modules",
+		"build"
+	]
+}
