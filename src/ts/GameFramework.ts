@@ -1,19 +1,15 @@
 import * as Utils from "./utils";
-import { Game } from "./Game";
+import { GameFactory, Game } from "./Game";
 
 import { GameA } from "./games/GameA";
 import { GameB } from "./games/GameB";
 
 module GameFramework {
-	interface GameFactory {
-		new(finish : () => void) : Game;
-	}
-
 	let games : GameFactory[];
 
 	let currentGame : Game;
 
-	export function init() {
+	export function init() : void {
 		console.log("GameFramework init " + Utils.randomUtil());
 
 		games = [

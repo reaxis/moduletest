@@ -1,18 +1,13 @@
 {
-	"name": "moduletest",
-	"version": "1.0.0",
-	"description": "",
-	"devDependencies": {
-		"typescript": "^2.1.5",
-		"rollup": "^0.41.1"
-	},
-	"scripts": {
-		"compile": "tsc",
-		"rollup": "rollup build/js/GameFramework.js > build/GameFramework.js",
-		"copy": "cp src/index.html build",
-
-		"build": "npm run compile && npm run rollup && npm run copy"
-	},
-	"author": "",
-	"license": "ISC"
+  "name": "moduletest",
+  "version": "1.0.0",
+  "description": "",
+  "devDependencies": {
+    "gulp": "^3.9.1",
+    "gulp-cli": "^1.2.2",
+    "rollup": "^0.41.1",
+    "typescript": "^2.1.5"
+  },
+  "author": "",
+  "license": "ISC"
 }

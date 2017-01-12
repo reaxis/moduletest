@@ -1,3 +1,7 @@
+export interface GameFactory {
+	new(finish : () => void) : Game;
+}
+
 export abstract class Game {
 	constructor(protected finish : () => void) {
 		console.log("Game constructor");
